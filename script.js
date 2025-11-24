@@ -69,32 +69,32 @@ function createParticle() {
     
     // Taille aléatoire (petite et grande)
     const size = Math.random() * 8 + 3; 
-    particle.style.width = ⁠ ${size}px ⁠;
-    particle.style.height = ⁠ ${size}px ⁠;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
     
     // Couleur aléatoire + Glow
     const color = colors[Math.floor(Math.random() * colors.length)];
     particle.style.background = color;
-    particle.style.boxShadow = ⁠ 0 0 ${size * 2}px ${color} ⁠;
+    particle.style.boxShadow = `0 0 ${size * 2}px ${color}`;
 
     // POSITIONNEMENT CRITIQUE
     const rect = bookContainer.getBoundingClientRect();
     const startX = rect.left; 
     const startY = rect.top + rect.height / 2 + (Math.random() * 150 - 75); 
     
-    particle.style.left = ⁠ ${startX}px ⁠;
-    particle.style.top = ⁠ ${startY}px ⁠;
+    particle.style.left = `${startX}px`;
+    particle.style.top = `${startY}px`;
 
     // Définition des trajectoires (Variables CSS pour l'animation)
     const tx = (Math.random() - 0.5) * 50; 
     const txEnd = (Math.random() - 0.5) * 400; 
     
-    particle.style.setProperty('--tx', ⁠ ${tx}px ⁠);
-    particle.style.setProperty('--tx-end', ⁠ ${txEnd}px ⁠);
+    particle.style.setProperty('--tx', `${tx}px`);
+    particle.style.setProperty('--tx-end', `${txEnd}px`);
 
     // Vitesse
     const duration = Math.random() * 2 + 2; 
-    particle.style.animation = ⁠ floatUp ${duration}s ease-out forwards ⁠;
+    particle.style.animation = `floatUp ${duration}s ease-out forwards`;
 
     document.body.appendChild(particle);
 
